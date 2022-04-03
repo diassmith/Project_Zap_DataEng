@@ -41,3 +41,14 @@ for zone in zones:
 
 # DBTITLE 1,Check mount with Python
 dbutils.fs.ls ("/mnt/bronze")
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC val bronzeFile = "dbfs:/mnt//bronze/source-4-ds-train.json"
+# MAGIC val silverDF = spark.read.text(bronzeFile)
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC display(silverDF)
