@@ -14,6 +14,8 @@ configs = {"fs.azure.account.auth.type": "OAuth",
        "fs.azure.account.oauth2.client.secret": dbutils.secrets.get(scope="keyvault",key="secret"),
        "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/"+dbutils.secrets.get(scope="keyvault", key="directoryTenantId")+"/oauth2/token"}
 
+/*testando 
+
 // COMMAND ----------
 
 // MAGIC %python
