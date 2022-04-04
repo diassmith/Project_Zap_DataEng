@@ -41,3 +41,14 @@ for zone in zones:
 
 # DBTITLE 1,Check mount with Python
 dbutils.fs.ls ("/mnt/bronze")
+
+# COMMAND ----------
+
+spark.sql("CREATE OR REPLACE TEMPORARY VIEW Json USING json OPTIONS" + 
+      "(path 'dbfs:/mnt/bronze/source-4-ds-train.json')")
+spark.sql("select id from Json").show()
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC display(silverDF)
