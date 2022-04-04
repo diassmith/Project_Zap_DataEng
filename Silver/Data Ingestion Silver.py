@@ -44,9 +44,9 @@ dbutils.fs.ls ("/mnt/bronze")
 
 # COMMAND ----------
 
-# MAGIC %scala
-# MAGIC val bronzeFile = "dbfs:/mnt//bronze/source-4-ds-train.json"
-# MAGIC val silverDF = spark.read.text(bronzeFile)
+spark.sql("CREATE OR REPLACE TEMPORARY VIEW Json USING json OPTIONS" + 
+      "(path 'dbfs:/mnt/bronze/source-4-ds-train.json')")
+spark.sql("select id from Json").show()
 
 # COMMAND ----------
 
