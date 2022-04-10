@@ -8,7 +8,7 @@ spark.conf.set(
 
 # DBTITLE 1,Checking all scopes created
 # MAGIC %python
-# MAGIC dbutils.secrets.listScopes()
+# MAGIC  dbutils.secrets.listScopes()
 
 # COMMAND ----------
 
@@ -35,7 +35,7 @@ for zone in zones:
 # COMMAND ----------
 
 # DBTITLE 1,Check mount CLI Linux
-# MAGIC %fs ls /mnt/bronze/
+/*%fs ls /mnt/bronze/*/
 
 # COMMAND ----------
 
@@ -44,11 +44,10 @@ dbutils.fs.ls ("/mnt/bronze")
 
 # COMMAND ----------
 
-spark.sql("CREATE OR REPLACE TEMPORARY VIEW Json USING json OPTIONS" + 
+/*spark.sql("CREATE OR REPLACE TEMPORARY VIEW Json USING json OPTIONS" + 
       "(path 'dbfs:/mnt/bronze/source-4-ds-train.json')")
-spark.sql("select id from Json").show()
+spark.sql("select id from Json").show()*/
 
 # COMMAND ----------
 
-# MAGIC %scala
-# MAGIC display(silverDF)
+/*display(silverDF)*/
